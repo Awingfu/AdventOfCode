@@ -1,4 +1,5 @@
-import os
+filepath = "./day1/day1.txt"
+
 def inputFileToList(fileName):
     with open(fileName, "r") as inputFile:
         data = inputFile.readlines()
@@ -14,7 +15,7 @@ def eval(element):
 
 def sumFrequencyOfFile():
     total = 0
-    for elem in inputFileToList("day1.txt"):
+    for elem in inputFileToList(filepath):
         total += eval(elem)
     return(total)
 
@@ -23,7 +24,7 @@ def firstFrequencyHitTwice():
     frequncySet = {0}
     found = False
     while not found:
-        for elem in inputFileToList("day1.txt"):
+        for elem in inputFileToList(filepath):
             total += eval(elem)
             if total in frequncySet:
                 found = True
